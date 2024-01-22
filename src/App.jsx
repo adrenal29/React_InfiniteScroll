@@ -36,7 +36,7 @@ function App() {
   //Check for infinite scroll condition
   const controlScroll = () => {
     const { scrollHeight, scrollTop, clientHeight } = document.documentElement;
-    if (clientHeight + scrollTop >= scrollHeight - 10 && !loading) {
+    if (clientHeight + scrollTop >= scrollHeight - 50 && !loading) {
       setLoading(true);
       setPage((prev) => prev + 1);
     }

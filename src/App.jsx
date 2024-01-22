@@ -13,6 +13,7 @@ function App() {
   //Fetch most starred repos using Github Rest API
   const fetchData = async () => {
     try {
+      setLoading(true);
       const date=reqDate();
       console.log(date)
       const url=`https://api.github.com/search/repositories?q=created:>${date}&sort=stars&order=desc&page=${page}`
@@ -36,7 +37,7 @@ function App() {
   //Check for infinite scroll condition
   const controlScroll = () => {
     const { scrollHeight, scrollTop, clientHeight } = document.documentElement;
-    if (clientHeight + scrollTop >= scrollHeight - 50 && !loading) {
+    if (clientHeight + scrollTop >= scrollHeight - 10 && !loading) {
       setLoading(true);
       setPage((prev) => prev + 1);
     }

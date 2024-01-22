@@ -15,7 +15,7 @@ const Card = ({ data }) => {
                 <div className='repoInfo'>
                     <button><a href={data.html_url}>Read More</a></button>
                     <div className='star'>
-                        <CiStar className='star-icon' />
+                        <CiStar className='star-icon'  />
                         <p>{data.stargazers_count}</p>
                     </div>
                     <div className='issue'>

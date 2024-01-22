@@ -1,0 +1,101 @@
+.card{
+    display: flex;
+    box-shadow:1px 1px 2px rgb(160, 159, 159);
+    border: 1px solid rgb(210, 206, 206);
+    margin:3% 20%;
+}
+.card:hover{
+    box-shadow:3px 3px 6px rgb(160, 159, 159) ;
+    transition: box-shadow 0.1s ease;
+}
+.card img{
+   object-fit: fill;
+   width: 25%;
+}
+.repoHead{
+    min-height: 60%;
+}
+.card-content{
+    padding: 5%;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    min-height: 50%;
+}
+
+
+.repo-title{
+    font-weight: 700;
+    font-size:150% ;
+    
+}
+.repo-title span{
+    color: red;
+    font-size: 75%;
+}
+.card-content p{
+    margin-top: 3%;
+    font-size: 20px;
+}
+.repoInfo{
+    display: flex;
+    margin-top: 5%;
+}
+.repoInfo button{
+    background-color: orange;
+    padding: 2%;
+    border-radius: 6%;
+    margin-right: 12%;
+}
+.star{
+    position: relative;
+}
+.star-icon{
+    position: absolute;
+    top:20%;
+    left:-40%;
+}
+.issue{
+    position: relative;
+    margin-left: 20%;
+}
+.issue-icon{
+    position: absolute;
+    top:20%;
+    left: -70%;
+}
+hr{
+   margin-top:10% ;
+}
+
+.repoInfo button a{
+    text-decoration: none;
+    color: white;
+}
+
+
+@media only screen and (max-width:760px){
+    .repo-title{
+        font-size: 80%;
+    }
+    .card{
+        margin: 3% 10%;
+    }
+    .card-content p{
+        word-wrap: break-word;
+        padding-right: 10%;
+        font-size: 12px;
+    }
+     .star,.issue{
+        width: 100%;
+        margin-left: 20%;
+        padding-top: 2.5%;
+     }
+    .repoInfo button{
+        width: 100%;
+        height: 80%;
+        font-size: 10px;
+        border-radius: 4px;
+        margin-right: 10%;
+    }
+}

@@ -1,7 +1,8 @@
 import { useEffect } from 'react';
 import { useState } from 'react';
 import './App.css';
-
+import Card from './components/Card.jsx';
+import Loader from './components/Loader';
 function App() {
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(false);
@@ -16,7 +17,6 @@ function App() {
       const repos = await repoData.items;
       if(repos?.length==0 || repos==undefined){
       return;
-      setLoading(true);
       }
       console.log(repos)
       setData((prevData) => [...prevData, ...repos]);
@@ -48,16 +48,16 @@ function App() {
 
   return (
     <>
-      <div>
+      <div className='content'>
         {data && data.map((el, idx) =>
           (
             <div key={idx}>
-              <h2>{el.name}</h2>
+             <Card data={el}/>
             </div>
           )
         )}
       </div>
-      {loading && <h2>Loading</h2>}
+      {loading && <Loader/>}
     </>
   );
 }

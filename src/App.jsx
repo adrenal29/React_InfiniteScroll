@@ -8,7 +8,6 @@ function App() {
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(false);
   const [page, setPage] = useState(1);
-  const initialRender = useRef(true);
   var lock=0;
  
   //Fetch most starred repos using Github Rest API
@@ -57,11 +56,7 @@ function App() {
   };
 
   useEffect(() => {
-    if (!initialRender.current) {
       fetchData();
-    } else {
-      initialRender.current = false;
-    }
   }, [page]);
 
   useEffect(() => {

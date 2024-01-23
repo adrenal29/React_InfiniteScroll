@@ -40,9 +40,9 @@ function App() {
 
   //Check for infinite scroll condition
   const controlScroll = () => {
-    const { scrollHeight, scrollTop, clientHeight } = document.documentElement;
-   
-    if (clientHeight + scrollTop >= scrollHeight - 10 && !loading ) {
+    const { scrollHeight, scrollTop, clientHeight ,offsetHeight} = document.documentElement;
+    console.log(scrollHeight +scrollTop)
+    if (clientHeight + scrollTop >= scrollHeight - 300 && !loading ) {
       setLoading(true);
       console.log(loading)
       console.log(lock)
